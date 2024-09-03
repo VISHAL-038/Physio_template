@@ -7,30 +7,31 @@
 
 body {
     background: linear-gradient(to bottom, #a0dfff, #fff);
-    min-height: 100vh; /* Ensure the content takes at least the full viewport height */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 header {
     text-align: center;
     padding: 2rem;
-    background-color: #f0f8ff;
+    background-color: #ffb347;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     font-size: 2.5rem;
-    color: #333;
+    color: #fff;
+    animation: slideInDown 1s ease-in-out forwards;
 }
 
 .cloud-container {
     position: relative;
     width: 100%;
-    min-height: 400px; /* Minimum height for the cloud section */
+    min-height: 400px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap; /* Allow clouds to wrap on smaller screens */
+    flex-wrap: wrap;
     padding: 2rem 0;
 }
 
@@ -38,19 +39,26 @@ h1 {
     background: #fff;
     border-radius: 50%;
     width: 250px;
-    height: 150px;
+    height: 250px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
     animation: float 10s ease-in-out infinite;
-    color: #333;
-    font-size: 1rem;
-    line-height: 1.2;
-    margin: 20px; /* Add margin to space out the clouds */
+    color: #007acc;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transitions */
+}
+
+/* Cloud hover effect */
+.cloud:hover {
+    transform: scale(1.05); /* Slightly enlarge the cloud on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increase shadow */
 }
 
 .cloud p {
@@ -96,6 +104,7 @@ h1 {
     width: 300px;
     text-align: center;
     transition: transform 0.3s;
+    animation: pulse 3s infinite;
 }
 
 .floating-box:hover {
@@ -111,4 +120,27 @@ h2 {
 p {
     font-size: 1rem;
     color: #333;
+}
+
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
