@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #a0dfff, #fff);
+    min-height: 100vh; /* Ensure the content takes at least the full viewport height */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f0f8ff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.cloud-container {
+    position: relative;
+    width: 100%;
+    min-height: 400px; /* Minimum height for the cloud section */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Allow clouds to wrap on smaller screens */
+    padding: 2rem 0;
+}
+
+.cloud {
+    background: #fff;
+    border-radius: 50%;
+    width: 250px;
+    height: 150px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: float 10s ease-in-out infinite;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.2;
+    margin: 20px; /* Add margin to space out the clouds */
+}
+
+.cloud p {
+    margin: 0;
+}
+
+.cloud:nth-child(2) {
+    width: 300px;
+    height: 180px;
+    animation-duration: 12s;
+}
+
+.cloud:nth-child(3) {
+    width: 280px;
+    height: 160px;
+    animation-duration: 15s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.benefits-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3rem 0;
+    background-color: #f0f8ff;
+}
+
+.floating-box {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 1rem;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.floating-box:hover {
+    transform: translateY(-10px);
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #007acc;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
+    color: #333;
+}
